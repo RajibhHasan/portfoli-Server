@@ -1,5 +1,12 @@
 const express = require("express");
 require("dotenv").config();
+const os = require('os');
+
+
+
+
+
+
 
 const app = express();
 const {
@@ -82,6 +89,14 @@ async function run() {
 app.listen(process.env.PORT, async () => {
 	console.log("App is runing:5175");
 	await run();
+const networkInterfaces = os.networkInterfaces();
 
+// Find the IPv4 address of the first network interface that is not internal or loopback
+const ipAddress = Object.values(networkInterfaces)
+    .flat()
+    .find(interface => !interface.internal && interface.family === 'IPv4')
+    .address;
+
+console.log('Server IP Address:', ipAddress);
 
 });
