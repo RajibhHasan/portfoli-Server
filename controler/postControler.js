@@ -12,7 +12,7 @@ let url;
 if(req.file){
 	 let {filename}=req.file;
 	 
-	  url=`http://localhost:5175/upload/${filename}`;
+	  url=`${process.env.SERVER_ADDRESS}/upload/${filename}`;
 }
  if(!req.file){
 	url=null;
