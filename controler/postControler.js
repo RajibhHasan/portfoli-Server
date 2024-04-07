@@ -12,7 +12,7 @@ let url;
 if(req.file){
 	 let {filename}=req.file;
 	 
-	  url=`${process.env.SERVER_ADDRESS}/upload/${filename}`;
+	  url=`${process.env.SERVER_ADDRESS}upload/${filename}`;
 }
  if(!req.file){
 	url=null;
