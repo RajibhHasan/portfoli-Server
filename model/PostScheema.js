@@ -11,6 +11,7 @@ const postSchema = new mongoose.Schema({
 	file: String,
   text:String,
   username:String,
+ 
   email:String,
   avater:{
 	type:String,
